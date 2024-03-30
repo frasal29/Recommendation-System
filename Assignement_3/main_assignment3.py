@@ -31,8 +31,9 @@ def main():
     '''          
     users = []
     # Load the data
-    data = pd.read_csv("dataset/ml-latest-small/ratings.csv")
     movie_data = load_movie_data("dataset/ml-latest-small/movies.csv")
+    data = pd.read_csv("dataset/ml-latest-small/ratings.csv")
+    
 
     # Crea cartella di output se già non esiste
     if not os.path.exists("output"):
@@ -78,12 +79,12 @@ def main():
     all_movies_predictions.to_csv("output/all_movies.csv", index=False)
     
     '''
-    
+      
 # Il main parte da qui se si hanno gia' le predictions
 #############################    
     data = pd.read_csv("dataset/ml-latest-small/ratings.csv")
     movie_data = load_movie_data("dataset/ml-latest-small/movies.csv")
-    users = [23,55,324,64,432,2,543,99,5,321]
+    users = [34,22,75,64,4]
     all_movies_predictions = pd.read_csv('output/all_movies.csv')
 #############################
     

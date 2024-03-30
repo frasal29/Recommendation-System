@@ -126,10 +126,10 @@ def groupDis(j, users, setTopkMovies, k, dataPredictions, new_predictions):
     for user in users:
         temp = sat(user, k, setTopkMovies, dataPredictions, new_predictions)
         list_sat.append(temp)
-    #difference = max(list_sat) - min(list_sat)
+    difference = max(list_sat) - min(list_sat)
     #difference = max(list_sat)
     #difference = np.mean(list_sat)
-    difference = calculate_standard_deviation(users, list_sat,)
+    #difference = calculate_standard_deviation(users, list_sat,)
 
     group_sat = np.mean(list_sat)
     
