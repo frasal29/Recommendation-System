@@ -41,7 +41,8 @@ def create_df_csv_movie_recommendations(final_topKmovies, moviedata):
             df = pd.concat([df, pd.DataFrame({'iteration': [iteration], 'movieId': [movie_id], 'title': [title], 'rating': [rating]})])
 
     # Save the DataFrame to a CSV file
-    df.to_csv("output/topkmovies_original.csv", index=False)
+    df.to_csv("output/topkmovies_revisited.csv", index=False)
+
 
 def commonIdMovie(predictions_df, users):
     result_rows = []
@@ -120,8 +121,8 @@ def groupDis(j, users, setTopkMovies, k, dataPredictions, new_predictions):
     for user in users:
         temp = sat(user, k, setTopkMovies, dataPredictions, new_predictions)
         list_sat.append(temp)
-    difference = max(list_sat) - min(list_sat)
-    #difference = calculate_standard_deviation(users, list_sat)
+    #difference = max(list_sat) - min(list_sat)
+    difference = calculate_standard_deviation(users, list_sat)
 
     group_sat = np.mean(list_sat)
     
@@ -133,7 +134,7 @@ def groupDis(j, users, setTopkMovies, k, dataPredictions, new_predictions):
     csv_columns.append("groupDis")
     csv_columns.append("groupSat")
     
-    csv_file = "output/satisfaction_original.csv"
+    csv_file = "output/satisfaction_revisited.csv"
     if not os.path.exists(csv_file):
         with open(csv_file, mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=csv_columns)
