@@ -1,4 +1,4 @@
-```markdown
+
 # Movie Sequential Recommendation System
 
 This repository contains a Python implementation of a movie recommendation system based on collaborative filtering algorithms. The system generates movie recommendations for a group of users using both an original sequential recommendation algorithm and a revisited version of the algorithm. The predictions are made by analyzing the ratings provided by users for various movies.
