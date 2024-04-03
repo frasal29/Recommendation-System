@@ -14,7 +14,7 @@ def load_movie_data(file_path):
 
 
 def main():
-    '''          
+              
     users = []
     # Load the data
     movie_data = load_movie_data("dataset/ml-latest-small/movies.csv")
@@ -64,8 +64,8 @@ def main():
     all_movies_predictions = seq.create_user_ratings_dataframe(predictions_df, users)
     all_movies_predictions.to_csv("output/all_movies.csv", index=False)
     
-    '''
-      
+    
+    '''  
 # Main starts from here if predictions are already available
 #############################    
     data = pd.read_csv("dataset/ml-latest-small/ratings.csv")
@@ -73,7 +73,7 @@ def main():
     users = [34,22,75,64,4]
     all_movies_predictions = pd.read_csv('output/all_movies.csv')
 #############################
-    
+    '''
     while True:
         print("Enter the value of how many top k items must to be considered:")
         k = input()

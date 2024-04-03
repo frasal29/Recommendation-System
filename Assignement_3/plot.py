@@ -68,9 +68,6 @@ def plot_groupDis_and_groupSat_from_csv(csv_file):
     if first_underscore_index != -1 and dot_index != -1:
         extracted_text = csv_file[first_underscore_index + 1:dot_index]
 
-    
-    
-    
     # Read data from the CSV file
     df = pd.read_csv(csv_file)
 
@@ -88,6 +85,12 @@ def plot_groupDis_and_groupSat_from_csv(csv_file):
     plt.figure(figsize=(10, 6))
     plt.plot(x_values, groupDis_values, marker='o', color='skyblue', linewidth=2, markersize=8, label='groupDis')
     plt.plot(x_values, groupSat_values, marker='o', color='salmon', linewidth=2, markersize=8, label='groupSat')
+    
+    # Annotate each point with its value
+    for i, (x, y1, y2) in enumerate(zip(x_values, groupDis_values, groupSat_values)):
+        plt.text(x, y1 + 0.03, f'{y1:.3f}', ha='center', va='bottom', fontsize=8, color='blue')
+        plt.text(x, y2 + 0.03, f'{y2:.3f}', ha='center', va='bottom', fontsize=8, color='red')
+    
     plt.title('groupDis and groupSat per Iteration', fontsize=20)
     plt.xlabel('Iterations', fontsize=15)
     plt.ylabel('Values', fontsize=15)
