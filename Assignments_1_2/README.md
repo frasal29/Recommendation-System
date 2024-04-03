@@ -20,7 +20,7 @@ To run the scripts in this repository, follow these steps:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your_username/group-movie-recommendations.git
+git clone https://github.com/frasal29/Recommendation-System.git
 ```
 
 2. Install the required dependencies:
